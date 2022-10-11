@@ -4,14 +4,15 @@ trigger:
     - master
 
 variables:
-  subscr: 'conFxApp'
-  functionAppName: func-devops--14459
+  subscr: 'conFuncApp'
+  env: dev
+  functionAppName: func-devops-$(env)
 
 pool:
   vmImage: 'ubuntu-latest'
 
 stages:
-- stage: Build
+- stage: BnP
   displayName: Build and Provision
   jobs:
   - job: Build
@@ -50,7 +51,8 @@ stages:
         azureSubscription: '$(subscr)'
         scriptType: 'bash'
         scriptLocation: 'scriptPath'
-        scriptPath: '$(System.DefaultWorkingDirectory)/deploy/provision.sh'
+        scriptPath: '$(System.DefaultWorkingDirectory)/deploy/provision-func-app.sh'
+        arguments: '$(env)'
 
 - stage: Deploy
   displayName: Deploy stage
