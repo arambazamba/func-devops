@@ -4,7 +4,7 @@ trigger:
     - master
 
 variables:
-  subscr: 'conFuncApp'
+  subscr: scFunc
   env: dev
   functionAppName: func-devops-$(env)
 
