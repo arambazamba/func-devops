@@ -56,8 +56,9 @@ stages:
 
 - stage: Deploy
   displayName: Deploy stage
-  dependsOn: Build
+  dependsOn: BnP
   condition: succeeded()
+  
   jobs:
   - deployment: Deploy
     environment: funcapp-production
