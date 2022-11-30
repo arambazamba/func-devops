@@ -9,7 +9,7 @@ pr: none
 variables:
   subscr: scFunc
   #override with random value from provisioning script
-  env: 7024
+  env: 17144
   functionAppName: func-devops-$(env)
 
 pool:
