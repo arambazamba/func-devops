@@ -7,10 +7,9 @@ trigger: none
 pr: none
 
 variables:
-  subscr: scFunc
+  subscr: scDemo
   #override with random value from provisioning script
-  env: 17144
-  functionAppName: func-devops-$(env)
+  functionAppName: func-devops-9285
 
 pool:
   vmImage: 'ubuntu-latest'
